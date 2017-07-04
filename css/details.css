@@ -285,23 +285,28 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: scroll;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   background: #f5f5f5;
 }
 .mainc .commonscorea {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  box-sizing: content-box;
   background: #fff;
   height: 3.008rem;
   padding: 0.64rem;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
 }
 .mainc .commonscorea .l {
   border-right: 0.02133rem solid #ddd;
@@ -469,8 +474,6 @@ html, body {
       flex-wrap: wrap;
 }
 .mainc .comcontane .comsele .card {
-  /*width: px2rem(128);*/
-  /*height: px2rem(32);*/
   padding: 0.32rem;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -480,6 +483,88 @@ html, body {
   color: #6d7885;
   font-size: 0.576rem;
   line-height: 0.6912rem;
+}
+.mainc .comcontane .user {
+  padding: 0.64rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 0.02133rem solid #ddd;
+}
+.mainc .comcontane .user .user-l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.mainc .comcontane .user .user-l .usercom {
+  padding-left: 0.53333rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.mainc .comcontane .user .user-l .usercom strong {
+  font-size: 0.55467rem;
+  line-height: 0.6656rem;
+  color: #666;
+  margin-bottom: 0.21333rem;
+  display: block;
+}
+.mainc .comcontane .user .user-l .usercom .star {
+  position: relative;
+  display: inline-block;
+}
+.mainc .comcontane .user .user-l .usercom .star .scorestarg {
+  white-space: nowrap;
+}
+.mainc .comcontane .user .user-l .usercom .star .scorestarg .ratingstar {
+  height: 0.42667rem;
+  width: 0.42667rem;
+  fill: #cecece;
+}
+.mainc .comcontane .user .user-l .usercom .star .scorestary {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.mainc .comcontane .user .user-l .usercom .star .scorestary .ratingstar {
+  height: 0.42667rem;
+  width: 0.42667rem;
+  fill: #ffaa0c;
+}
+.mainc .comcontane .user .user-l .usercom span {
+  font-size: 0.53333rem;
+  line-height: 0.64rem;
+  color: #999;
+}
+.mainc .comcontane .user .user-l .usercom .messagecom {
+  color: #333;
+  font-size: 0.59733rem;
+  line-height: 0.7168rem;
+  width: 10.24rem;
+  margin-bottom: 0.21333rem;
+}
+.mainc .comcontane .user .user-l .usercom .replay {
+  width: 10.24rem;
+  background: #cecece;
+  padding: 0.42667rem;
+  font-size: 0.55467rem;
+  line-height: 0.6656rem;
+  color: #333;
+  border-radius: 0.21333rem;
+}
+.mainc .comcontane .user .user-r span {
+  font-size: 0.512rem;
+  line-height: 0.6144rem;
+  color: #999;
 }
 
 .footer {

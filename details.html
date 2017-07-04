@@ -301,6 +301,72 @@
 	
 				<% } %>
 			</script>
+			
+				
+			
+			<script type="text/html" id="userc">
+				<% for(var i = 0;i < data.length; i++){ %>
+					<div class="user">
+						<div class="user-l">
+							<img src="https://fuss10.elemecdn.com/f/2e/20a4300d40b97e98a5889591fb1f2jpeg.jpeg?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/">
+							<div class="usercom">
+								<strong><%= data[i].username %></strong>
+								<br>
+								<div class="star">
+									<div class="scorestarg">
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+									</div>
+									<div class="scorestary" style="width: <%= data[i].rating_star / 5 * 100 +'%' %>">
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+										<svg class="ratingstar">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+										</svg>
+									</div>
+								</div>
+								<span><%= data[i].time_spent_desc %></span>
+								<br>
+								<div class="messagecom">
+									<%= data[i].rating_text %>
+								</div>
+								<% if(data[i].reply_text){ %>
+									<div class="replay">
+										<%= data[i].reply_text %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="user-r">
+							<span><%= data[i].rated_at %></span>
+						</div>
+					</div>
+				<% } %>
+				
+			</script>
 		</div>
 	</div>
 

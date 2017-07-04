@@ -241,15 +241,19 @@ html,body{
 .mainc{
 	display: none;
 	flex-direction: column;
+	justify-content: space-between;
+	overflow: scroll;
 	flex: 1;
 	background: #f5f5f5;
 	.commonscorea{
+		box-sizing: content-box;
 		display: flex;
 		justify-content: space-between;
+		box-sizing: content-box;
 		background: #fff;
 		height: px2rem(141);
 		padding: px2rem(30);
-		box-sizing: content-box;
+		
 		.l{
 			border-right: px2rem(1) solid #ddd;
 			padding-right: 30px;
@@ -391,8 +395,6 @@ html,body{
 			display: flex;
 			flex-wrap: wrap;
 			.card{
-				/*width: px2rem(128);*/
-				/*height: px2rem(32);*/
 				padding: px2rem(15);
 				box-sizing: content-box;
 				background: #ebf5ff;
@@ -403,7 +405,83 @@ html,body{
 				line-height: px2rem(32.4);
 			}
 		}
+		.user{
+			padding: px2rem(30) 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			border-bottom: px2rem(1) solid #ddd;
+			.user-l{
+				display: flex;
+				align-items: flex-start;
+				.usercom{
+					padding-left: px2rem(25);
+					box-sizing: border-box;
+					strong{
+						font-size: px2rem(26);
+						line-height: px2rem(31.2);
+						color: #666;
+						margin-bottom: px2rem(10);
+						display: block;
+					}
+					.star{
+					position: relative;
+					display: inline-block;
+					
+						.scorestarg{
+							white-space: nowrap;
+							.ratingstar{
+								height: px2rem(20);
+								width: px2rem(20);
+								fill: #cecece;
+							}
+						}
+						.scorestary{
+							white-space: nowrap;
+							position: absolute;
+							top: 0;
+							overflow: hidden;
+							.ratingstar{
+								height: px2rem(20);
+								width: px2rem(20);
+								fill: #ffaa0c;
+							}
+						}
+						
+					}
+					span{
+						font-size: px2rem(25);
+						line-height: px2rem(30);
+						color: #999;
+					}
+					.messagecom{
+						color: #333;
+						font-size: px2rem(28);
+						line-height: px2rem(33.6);
+						width: px2rem(480);
+						margin-bottom: px2rem(10);
+					}
+					.replay{
+						width: px2rem(480);
+						background: #cecece;
+						padding: px2rem(20);
+						font-size: px2rem(26);
+						line-height: px2rem(31.2);
+						color: #333;
+						border-radius: px2rem(10);
+					}
+				}
+			}
+			.user-r{
+				span{
+					font-size: px2rem(24);
+					line-height: px2rem(28.8);
+					color: #999;
+				}
+			}
+		}
 	}
+
 }
 .footer{
 	display: flex;

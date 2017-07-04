@@ -7,6 +7,7 @@ var Details = {
 		this.selectTab();
 		this.loadcomsco();
 		this.loadcard();
+		this.loadcom();
 	}, 
 	initParams: function() {
 		var params = this.params;
@@ -73,10 +74,11 @@ var Details = {
 	selectTab: function() {
 		$('.common').click(function() {
 			$('.main').css('display', 'none');
-			$('.mainc').css('display', 'flex');
+			$('.mainc').css('display', 'block');
 			$('.products').removeClass('selectnow')
 			$(this).addClass('selectnow');
 			$('.selectline').css('left', 530);
+			$('.footer').css('display', 'none');
 
 		});
 		$('.products').click(function() {
@@ -85,7 +87,7 @@ var Details = {
 			$('.common').removeClass('selectnow')
 			$(this).addClass('selectnow');
 			$('.selectline').css('left', 155);
-
+			$('.footer').css('display', 'flex');
 		});
 	},
 	loadcomsco: function() {
@@ -100,14 +102,26 @@ var Details = {
 	},
 	loadcard: function() {
 		$.get('https://mainsite-restapi.ele.me/ugc/v2/restaurants/'+this.id+'/ratings/tags', function(data) {
-			/*optional stuff to do after success */
-			console.log(data);
+			
 			if(data){
 				var sloadcard = template('scard',{
 					data: data
 				});
 				$('.comsele').append(sloadcard);
 			}
+		});
+	},
+	loadcom: function() {
+		$.get('https://mainsite-restapi.ele.me/ugc/v2/restaurants/'+this.id+'/ratings?has_content=true&offset=0&limit=10', function(data) {
+			/*optional stuff to do after success */
+			console.log(data);
+			if(data){
+				var userc = template('userc',{
+					data: data
+				});
+				$('.comcontane').append(userc);
+			}
+
 		});
 	}
 }
