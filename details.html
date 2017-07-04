@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<script src="./lib/hotcss.js" charset="utf-8"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="./js/template.js"></script>
+	<script src="js/details.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/details.css">
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+		<defs>
+			<symbol viewBox="0 0 20 32" id="arrow-left"><path fill="#fff" d="M16.552 5.633l-2.044-2.044L2.243 15.854l12.265 12.557 2.044-2.044L6.331 15.854z"></path></symbol>
+
+			<symbol viewBox="0 0 547 987" id="arrow-right"><path d="M0 931.973l51.2 54.613 494.933-494.933L51.2.133 0 51.333l440.32 440.32L0 931.973z"></path></symbol>
+
+			<symbol viewBox="0 0 44 44" id="cart-minus"><path fill="none" d="M0 0h44v44H0z"></path><path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path></symbol>
+
+			<symbol viewBox="0 0 22 22" id="rating-star"><path fill-rule="evenodd" d="M10.986 17.325l-5.438 3.323c-1.175.718-1.868.208-1.55-1.126l1.48-6.202-4.84-4.15c-1.046-.895-.775-1.71.59-1.82l6.353-.51L10.03.95c.53-1.272 1.39-1.266 1.915 0l2.445 5.89 6.353.51c1.372.11 1.632.93.592 1.82l-4.84 4.15 1.478 6.202c.32 1.34-.38 1.84-1.55 1.126l-5.437-3.323z"></path></symbol>
+		</defs>
+	</svg>
+	<!-- ----------------------- -->
+	<div class="header">
+		<div class="header-t">
+			<svg class="back">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
+			</svg>
+		</div>
+	</div>
+	<script type="text/html" id='loadName'>
+			<div class="header-m">
+			<% var str1 = data.image_path.substr(0,1); %>
+			<% var str2 = data.image_path.substr(1,2); %>
+			<% var str3 = data.image_path.substr(3); %>
+			<%if(data.image_path.substr(-3)=='peg'){%>
+				<img src="<%= 'https://fuss10.elemecdn.com/'+ str1+'/'+str2+'/'+str3 +'.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/' %>">
+			<%}else if(data.image_path.substr(-3)=='png'){%>
+				<img src="<%= 'https://fuss10.elemecdn.com/'+ str1+'/'+str2+'/'+str3 +'.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/' %>">
+			<%}%>
+			<div class="header-m-r">
+				<div class="header-m-r-t">
+					<%= data.name %>
+				</div>
+				<div class="header-m-r-m">
+					<div class="header-m-r-m-l">
+						<span>
+							<% if(data.delivery_mode) { %>
+								<%= data.delivery_mode.text %> /
+							<% } else { %>
+								商家配送 /
+							<% } %>
+						</span>
+						<span>
+							<%= data.order_lead_time %>分钟必达 /
+						</span>
+						<span>
+							配送费￥<%= data.float_delivery_fee %>
+						</span>
+					</div>
+					<div class="header-m-r-m-r">
+						<svg class="shop-header-detailIcon_1IXZI_0 arrowright">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
+						</svg>
+					</div>
+				</div>
+				<div class="header-m-r-b">
+					<span class="gg">公告：</span>
+					<span class="promotion_info"><%= data.promotion_info %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="header-b">
+			<div class="header-b-l">
+				<% if(data.activities[0]){ %>
+					<% if(data.activities[0].icon_name == '新'){ %>
+						<i class="activity-activityIcon_1iJyG_0" style="background-color: rgb(112, 188, 70); color: rgb(255, 255, 255); border-color: rgb(112, 188, 70);">新</i>
+					<% } else if(data.activities[0].icon_name == '减') { %>
+						<i style="background-color: rgb(240, 115, 115); color: rgb(255, 255, 255); border-color: rgb(240, 115, 115);">减</i>
+					<% } %>
+					<span><%= data.activities[0].description %></span>
+				<% } %>
+
+			</div>
+			<div class="header-b-r">
+				<span><%= data.activities.length %>个活动</span>
+			</div>
+		</div>
+	</script>
+	<!-- ----------------------- -->
+	<div class="selectbtn">
+		<div class="products selectnow">
+			<span>商品</span>
+
+		</div>
+		<div class="common">
+			<span>评价</span>
+		</div>
+		<p class="selectline"></p>
+	</div>
+	<!-- ----------------------- -->
+	<div class="main">
+		<div class="main-l">
+			
+		</div>
+		<script type="text/html" id="loadMenu">
+			<% for(var i = 0; i < data.length; i++){ %>
+				<div class="menubtn">
+					<% var str1 = data[i].icon_url.substr(0,1); %>
+					<% var str2 = data[i].icon_url.substr(1,2); %>
+					<% var str3 = data[i].icon_url.substr(3); %>
+					<% if(data[i].icon_url != ''){ %>
+						<% if(data[i].icon_url.substr(-3)=='peg'){%>
+							<img src="<%= 'https://fuss10.elemecdn.com/' + str1+'/'+str2+'/'+str3 + '.jpeg?imageMogr/format/webp/thumbnail/18x/' %>">
+						<%}else if(data[i].icon_url.substr(-3)=='png'){%>
+							<img src="<%= 'https://fuss10.elemecdn.com/' + str1+'/'+str2+'/'+str3 + '.png?imageMogr/format/webp/thumbnail/18x/' %>">
+						<%}%>	
+					<% } %>
+					<%= data[i].name %>
+				</div>
+			<% } %>
+		</script>
+		<div class="main-r">
+			<div class="product">
+				
+			</div>
+			<script type="text/html" id="product">
+				<% for(var i = 0; i < data.length; i++){ %>
+					<div class="title"> 
+						<div class="title-l">
+							<strong><%= data[i].name %></strong>
+							<span><%= data[i].description %></span>
+						</div>
+						<div class="title-r">
+							<span></span>
+						</div>
+					</div>
+					<% for(var j = 0; j < data[i].foods.length; j++){ %>
+						
+						<div class="content">
+							<div class="content-l">
+								<% if(data[i].foods[j].image_path != null){ %>
+									<% var str4 = data[i].foods[j].image_path.substr(0,1); %>
+									<% var str5 = data[i].foods[j].image_path.substr(1,2); %>
+									<% var str6 = data[i].foods[j].image_path.substr(3); %>
+									<% if(data[i].foods[j].image_path.substr(-3)=='peg'){%>
+										<img src="<%= 'https://fuss10.elemecdn.com/'+str4+'/'+str5+'/'+str6+'.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/' %>">
+									<%}else if(data[i].foods[j].image_path.substr(-3)=='png'){%>
+										<img src="<%= 'https://fuss10.elemecdn.com/'+str4+'/'+str5+'/'+str6+'.png	?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/' %>">
+									<%}%>	
+								<% }else{ %>
+									<img src="">
+								<% } %>
+								
+														
+							</div>
+							<div class="content-r">
+								<div class="name">
+									<%= data[i].foods[j].name %>
+								</div>
+								<p class="message">
+									<%= data[i].foods[j].description %>
+								</p>
+								<p class="scroe">
+									<span>月售<%= data[i].foods[j].month_sales %>份</span>
+									<span>好评率<%= data[i].foods[j].satisfy_rate %>%</span>
+								</p>
+								<div class="content-r-b">
+									<div class="l">
+										<strong>￥</strong>
+										<span><%= data[i].foods[j].specfoods[0].price %></span>
+									</div>
+									<div class="r">
+										<svg class="addicon" viewBox="0 0 44 44" id="cart-minus" width="100%" height="100%"><path fill="none" d="M0 0h44v44H0z"></path><path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% } %>
+				<% } %>
+			</script>
+		</div>
+	</div>
+	<!-- ----------------------- -->
+
+	<div class="mainc">
+		<div class="commonscorea">
+			
+		</div>
+		<script type="text/html" id="loadcomsco">
+			<div class="l">
+				<strong><%= data.overall_score.toFixed(1) %></strong>
+				<p>综合评价</p>
+				<span>高于周边商家<%= (data.compare_rating * 100).toFixed(1) %>%</span>
+			</div>
+			<div class="r">
+				<div class="t">
+					<span>服务态度</span>
+					<div class="star">
+						<div class="scorestarg">
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+						<div class="scorestary" style="width: <%= data.service_score / 5 * 100 - 10 +'%' %> ">
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+					</div>
+					<strong><%= data.service_score.toFixed(1) %></strong>
+				</div>
+				<div class="m">
+					<span>菜品评价</span>
+					<div class="star">
+						<div class="scorestarg">
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+						<div class="scorestary" style="width: <%= data.food_score / 5 * 100 - 10 +'%' %> ">
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="ratingstar">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+					</div>
+					<strong><%= data.food_score.toFixed(1) %></strong>
+				</div>
+				<div class="b">
+					<span>送达时间</span>
+					<i><%= data.deliver_time %>分钟</i>
+				</div>
+			</div>
+		</script>
+		<div class="comcontane">
+			<div class="comsele">
+				
+			</div>
+			<script type="text/html" id="scard">
+				<% for(var i = 0; i < data.length; i++){ %>
+					<% if(data[i].unsatisfied){ %>
+						<div class="card" style="background: #f5f5f5;color: #aaa">
+							<%= data[i].name %>(<%= data[i].count %>)
+						</div>
+					<% }else{ %>
+						<div class="card">
+							<%= data[i].name %>(<%= data[i].count %>)
+						</div>
+					<% } %>
+	
+				<% } %>
+			</script>
+		</div>
+	</div>
+
+	<!-- ----------------------- -->
+	<div class="footer">
+		<div class="shopcar">
+			<img src="img/shopcar.svg">
+		</div>
+		
+	</div>
+	<script type="text/html" id="loadFoot">
+		<div class="price">
+			<p>￥0</p>
+			<span>配送费￥<%= data.piecewise_agent_fee.rules[0].fee %></span>
+		</div>
+		<div class="costbtn">
+			￥<%= data.piecewise_agent_fee.rules[0].price %>起送
+		</div>
+	</script>
+</body>
+</html>

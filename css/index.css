@@ -1,0 +1,353 @@
+@import url(./reset.css);
+body {
+  background: #f5f5f5;
+}
+
+.header {
+  height: 4.92766rem;
+  background: #000;
+  padding: 0.42667rem 0.59733rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0af), to(#0085ff));
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header .header-t {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.472rem;
+}
+.header .header-t .header-t-l {
+  width: 8.88341rem;
+  height: 0.91733rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .header-t .header-t-l .header-icon {
+  width: 0.55467rem;
+  height: 0.66133rem;
+}
+.header .header-t .header-t-l .header-icon-1 {
+  width: 0.27733rem;
+  height: 0.13867rem;
+}
+.header .header-t .header-t-l a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.768rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 7.10667rem;
+  margin: 0 0.21333rem;
+  text-overflow: ellipsis;
+}
+.header .header-t .header-t-r {
+  width: 2.90091rem;
+  height: 1.30133rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .header-t .header-t-r .temple {
+  text-align: right;
+}
+.header .header-t .header-t-r .temple p {
+  color: #fff;
+  font-size: 0.512rem;
+}
+.header .header-t .header-t-r .temple p:first-child {
+  font-size: 0.59733rem;
+  height: 0.704rem;
+  line-height: 0.704rem;
+}
+.header .header-t .header-t-r img {
+  width: 1.17291rem;
+  height: 1.17291rem;
+  margin-left: 0.17067rem;
+}
+.header .header-m {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header .header-m .serach {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header .header-m .serach input {
+  width: 14.80597rem;
+  height: 1.536rem;
+  padding: 0.02133rem;
+  border-radius: 0.96rem;
+  -webkit-box-shadow: 0.00213rem 0.00213rem 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0.00213rem 0.00213rem 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 0.512rem;
+  color: #333;
+}
+.header .header-b {
+  height: 0.59733rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.header .header-b a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 0.59733rem;
+  line-height: 0.59733rem;
+  font-size: 0.512rem;
+}
+.header .header-b a:last-child {
+  margin-right: 0rem;
+}
+
+.banner {
+  height: 7.552rem;
+  background: #fff;
+}
+.banner .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.banner .swiper-slide a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 4rem;
+  height: 2.73033rem;
+  margin-top: 0.46933rem;
+  text-decoration: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.banner .swiper-slide a img {
+  width: 1.92rem;
+  height: 1.92rem;
+}
+.banner .swiper-slide a span {
+  font-size: 0.46933rem;
+  display: block;
+  height: 0.59733rem;
+  color: #666;
+}
+
+.recommend {
+  background: #fff;
+  margin-top: 0.42667rem;
+  height: 1.45067rem;
+  padding-left: 0.64rem;
+  line-height: 1.45067rem;
+  font-size: 0.64rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.main {
+  padding-bottom: 2.13333rem;
+}
+.main .business {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+}
+.main .business .logo {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 2.56rem;
+  height: 2.56rem;
+  padding: 0.64rem 0.42667rem;
+}
+.main .business .message {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 12.16rem;
+  height: 2.56rem;
+  padding: 0.64rem 0.42667rem;
+  padding-left: 0;
+}
+.main .business .message span {
+  font-size: 0.46933rem;
+  color: #666;
+}
+.main .business .message .message-t {
+  font-size: 0.64rem;
+  height: 0.68267rem;
+  width: 7.936rem;
+  line-height: 0.68267rem;
+  font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.main .business .message .message-t .index-premium {
+  width: 0.93833rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding: 0 0.10667rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background: #ffd930;
+  border-radius: 0.10667rem;
+  color: #000;
+  margin-right: 0.21333rem;
+}
+.main .business .message .message-m {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main .business .message .message-m .scorestar {
+  width: 2.56rem;
+  height: 0.42667rem;
+  position: relative;
+}
+.main .business .message .message-m .scorestar .scorestarg {
+  white-space: nowrap;
+}
+.main .business .message .message-m .scorestar .scorestarg .ratingstar {
+  height: 0.42667rem;
+  width: 0.42667rem;
+  fill: #cecece;
+}
+.main .business .message .message-m .scorestar .scorestary {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.main .business .message .message-m .scorestar .scorestary .ratingstar {
+  height: 0.42667rem;
+  width: 0.42667rem;
+  fill: #ffaa0c;
+}
+.main .business .message .message-m .score {
+  color: #ff6000;
+  padding: 0 0.17067rem;
+}
+.main .business .message .message-b {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main .business .message .message-b .needtime {
+  color: #2395ff;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 1.92rem;
+  padding-top: 0.192rem;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer a {
+  display: block;
+  width: 4rem;
+  height: 1.472rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+.footer a .footer-icon {
+  width: 0.85333rem;
+  height: 0.85333rem;
+}
+.footer a span {
+  display: block;
+  font-size: 0.42667rem;
+  line-height: 0.512rem;
+  color: #666;
+}
+.footer a .select {
+  color: #0089dc;
+}
+
+.backtotop {
+  position: fixed;
+  /*display: flex;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1.77067rem;
+  height: 1.77067rem;
+  border: 0.02133rem solid #999;
+  background: #fff;
+  border-radius: 50%;
+  right: 0.53333rem;
+  bottom: 3.54133rem;
+  z-index: 99;
+  display: none;
+  /*opacity: 0;*/
+}
+.backtotop .bttlogo {
+  width: 0.672rem;
+  height: 0.72747rem;
+  fill: #999;
+}
